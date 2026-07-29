@@ -1,0 +1,25 @@
+local u,t,p=game:GetService("UserInputService"),game:GetService("TweenService"),game.Players.LocalPlayer
+local s=Instance.new("ScreenGui",p.PlayerGui)s.Name="OnyxHub"s.ResetOnSpawn=false
+local m=Instance.new("Frame",s)m.Size=UDim2.new(0,360,0,320)m.Position=UDim2.new(.5,-180,.5,-160)m.BackgroundColor3=Color3.fromRGB(18,20,28)m.Active=true
+Instance.new("UICorner",m).CornerRadius=UDim.new(0,14)
+local function b(tx,c,y,e)local x=Instance.new("TextButton",m)x.Size=UDim2.new(0,320,0,48)x.Position=UDim2.new(0,20,0,y)x.BackgroundColor3=c x.Text=e.."  "..tx x.TextColor3=Color3.new(1,1,1)x.TextSize=15 x.Font=Enum.Font.GothamBold Instance.new("UICorner",x).CornerRadius=UDim.new(0,10)return x end
+local c=Instance.new("TextButton",m)c.Size=UDim2.new(0,32,0,32)c.Position=UDim2.new(1,-38,0,8)c.BackgroundTransparency=1 c.Text="X"c.TextColor3=Color3.fromRGB(200,200,200)c.TextSize=20 c.Font=Enum.Font.GothamBold
+local l=Instance.new("Frame",m)l.Size=UDim2.new(0,38,0,38)l.Position=UDim2.new(0,20,0,20)l.BackgroundColor3=Color3.fromRGB(220,40,40)Instance.new("UICorner",l).CornerRadius=UDim.new(0,9)
+local lt=Instance.new("TextLabel",l)lt.Size=UDim2.new(1,0,1,0)lt.BackgroundTransparency=1 lt.Text="O"lt.TextColor3=Color3.new(1,1,1)lt.TextSize=22 lt.Font=Enum.Font.GothamBold
+local ti=Instance.new("TextLabel",m)ti.Size=UDim2.new(0,200,0,26)ti.Position=UDim2.new(0,70,0,20)ti.BackgroundTransparency=1 ti.Text="OnyxHub"ti.TextColor3=Color3.new(1,1,1)ti.TextSize=24 ti.Font=Enum.Font.GothamBold ti.TextXAlignment=0
+local su=Instance.new("TextLabel",m)su.Size=UDim2.new(0,240,0,18)su.Position=UDim2.new(0,70,0,46)su.BackgroundTransparency=1 su.Text="Free OnyxHub Verification"su.TextColor3=Color3.fromRGB(80,140,255)su.TextSize=13 su.Font=Enum.Font.Gotham su.TextXAlignment=0
+local g=b("UNIRSE AL GRUPO (SCRIPT AQUÍ)",Color3.fromRGB(35,50,85),90,"🔥")g.TextColor3=Color3.fromRGB(255,200,50)
+local d=b("Unirse al Servidor de Discord",Color3.fromRGB(40,55,90),150,"💬")
+local y=b("Suscríbete a mi canal de YouTube",Color3.fromRGB(220,30,30),210,"📺")
+local f=Instance.new("TextButton",s)f.Size=UDim2.new(0,52,0,52)f.Position=UDim2.new(1,-70,.5,-26)f.BackgroundColor3=Color3.fromRGB(220,40,40)f.Text="O"f.TextColor3=Color3.new(1,1,1)f.TextSize=24 f.Font=Enum.Font.GothamBold f.Visible=false Instance.new("UICorner",f).CornerRadius=UDim.new(1,0)
+local n=Instance.new("TextLabel",s)n.Size=UDim2.new(0,180,0,36)n.Position=UDim2.new(.5,-90,.85,0)n.BackgroundColor3=Color3.fromRGB(30,200,80)n.Text="Link copiado!"n.TextColor3=Color3.new(1,1,1)n.TextSize=16 n.Font=Enum.Font.GothamBold n.Visible=false Instance.new("UICorner",n).CornerRadius=UDim.new(0,8)
+local function cp(l)setclipboard(l)n.Visible=true n.BackgroundTransparency=0 n.TextTransparency=0 task.delay(1.5,function()t:Create(n,TweenInfo.new(.3),{BackgroundTransparency=1,TextTransparency=1}):Play()task.wait(.3)n.Visible=false end)end
+c.MouseButton1Click:Connect(function()m.Visible=false f.Visible=true end)
+f.MouseButton1Click:Connect(function()m.Visible=true f.Visible=false end)
+g.MouseButton1Click:Connect(function()cp"https://discord.gg/FHrsUBYNjb"end)
+d.MouseButton1Click:Connect(function()cp"https://discord.gg/FHrsUBYNjb"end)
+y.MouseButton1Click:Connect(function()cp"https://www.youtube.com/@vinay-n1q8k"end)
+local dr,st,po
+m.InputBegan:Connect(function(i)if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dr=true st=i.Position po=m.Position end end)
+m.InputEnded:Connect(function(i)if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dr=false end end)
+u.InputChanged:Connect(function(i)if dr and(i.UserInputType==Enum.UserInputType.MouseMovement or i.UserInputType==Enum.UserInputType.Touch)then local d=i.Position-st m.Position=UDim2.new(po.X.Scale,po.X.Offset+d.X,po.Y.Scale,po.Y.Offset+d.Y)end end)
